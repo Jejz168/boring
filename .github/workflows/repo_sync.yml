@@ -23,8 +23,14 @@ jobs:
       run: |
         sudo timedatectl set-timezone "$TZ"
         pwd
+        #临时备份本仓库readme
+        mv README.md back.md
         svn export https://github.com/luolongfei/freenom/trunk/ ./ --force
-        
+        #备份源仓库readme
+        mv README.md READMEBACK.md
+        #恢复本仓库readme
+        mv back.md README.md
+                
     - name: Commit
       run: |
         git config --global user.email 349589369@qq.com
