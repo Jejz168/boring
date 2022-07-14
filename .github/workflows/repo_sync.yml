@@ -3,8 +3,8 @@ name: 同步源仓库
 on:
   repository_dispatch:
   workflow_dispatch:
-  #schedule:
-   # - cron: 30 16 * * *
+  schedule:
+    - cron: 30 16 * * *
   
 
 env:
